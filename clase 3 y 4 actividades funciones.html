@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//Hacer una función que tome un precio y devuelva un alert informando el precio con y sin iva. Extra: un segundo parámetro booleano para ver si tiene o no descuento del 15%.
+		
+		// var producto;
+		// function precios(){
+		// 	var precioSinIva=Math.floor(Math.random()*100);
+		// 	var precioConIva=Math.round(precioSinIva*0.21);
+		// 	producto=[precioSinIva,precioConIva];
+		// 	return producto;
+		// }
+		// precios();
+		// alert("El precio sin iva es: "+producto[0]+". El precio con iva es: "+producto[1]);
+		// confirm("Este producto tiene descuento?");
+
+
+		//------------------------------------------------------------
+		// Función calcula sueldo. Ingresar sueldo base y horas extra. Devolver categoria (1 numero cada 1000 de sueldo, ejemplo, $4000 -> cat. 4, hasta cat. 5). -10% de aportes. Hora extra se paga 1.5 de hora normal para todas las cat. Menos 4 y 5 que pagan 2. Imprimir a consola sueldo base, aportes, horas extras, categoría y total. Devolver sueldo total.
+
+		// var sueldo=prompt("Ingrese su sueldo:");
+		// var horas=prompt("Ingrese horas extras:");
+		// var categoria;
+
+		// if (sueldo<2000){
+		// 	categoria=1;
+		// 	horas=horas*sueldo/176*1.5;
+		// }
+		// else if(sueldo<3000){
+		// 	categoria=2;
+		// 	horas=horas*sueldo/176*1.5;
+		// }
+		// else if(sueldo<4000){
+		// 	categoria=3;
+		// 	horas=horas*sueldo/176*1.5;
+		// }
+		// else if(sueldo<5000){
+		// 	categoria=4;
+		// 	horas=horas*sueldo/176*2;
+		// }
+		// else if(sueldo<6000){
+		// 	categoria=5;
+		// 	horas=horas*sueldo/176*2;
+		// }
+
+		// var aportes=sueldo*0.1;
+		// var sueldototal=sueldo-aportes+horas;
+
+		// console.log("El sueldo base es: $",sueldo);
+		// console.log("Aportes: $",aportes);
+		// console.log("Le corresponde por horas extras: $",horas);
+		// console.log("Está en la categoria: ",categoria);
+		// console.log("El sueldo total es: $",sueldototal);
+
+		//------------------------------------------------------------
+
+			//Rehacer el Piedra, papel o tijera! de la clase anterior, guardando la puntuación del usuario. Debería durar 10 turnos y después anunciar el ganador. Extra: chequear empate.
+
+
+		// var puntospc=0;
+		// var puntosjugador=0;
+		// var vueltas=10;
+		// while ((puntospc+puntosjugador)<vueltas){
+
+		// 	var juego=["piedra","papel","tijera"];
+		// 	var jugador=prompt("Piedra, papel o tijera?").toLowerCase();
+		// 	var computadora=juego[Math.floor(Math.random()*3)];
+
+		// 	if (jugador==computadora){
+		// 		console.log("Empate!");
+		// 		vueltas--;
+		// 		console.log(puntosjugador,puntospc);
+		// 	}
+		// 	else if ((jugador=="piedra" && computadora=="tijera") || (jugador=="papel" && computadora=="piedra") || (jugador=="tijera" && computadora=="papel")){
+		// 		console.log("Ganaste!");
+		// 		puntosjugador++;
+		// 		console.log(puntosjugador,puntospc);
+		// 	}
+		// 	else if ((jugador=="piedra" && computadora=="papel") || (jugador=="papel" && computadora=="tijera") || (jugador=="tijera" && computadora=="piedra")){
+		// 		console.log("Perdiste!");
+		// 		puntospc++;
+		// 		console.log(puntosjugador,puntospc);
+		// 	}
+		// 	else{
+		// 		console.log("Intentalo de vuelta");
+		// 	}
+		// }		
+		// if (puntospc<puntosjugador){
+		// 	alert("Terminó el juego, ganaste!");
+		// }
+		// else if (puntospc==puntosjugador){
+		// 	alert("Terminó el juego, empataron!");
+		// }
+		// else {
+		// 	alert("Terminó el juego, perdiste!");
+		// }
+
+		//------------------------------------------------------------
+
+
+	</script>
+
+</body>
+</html>

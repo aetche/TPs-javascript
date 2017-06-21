@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript">
+	
+// 	var pares=[];
+// for (var i = 1; i<=100; i++){
+
+// 	if (i%2==0){
+// 		pares[pares.length]=i;	
+// 	}
+// }
+
+// alert(pares);
+// _____________________________________________________________
+
+// var numero=Math.floor(Math.random()*11);
+
+// switch	(numero){
+// 	case 1 || 2 || 3:
+// 	var puntos =5;
+// 	alert("Salió "+numero+". Tenés "+puntos+" puntos!");
+// 	break;// 	case 4 || 5 || 6:
+// 	puntos=10;
+// 	alert("Salió "+numero+". Tenés "+puntos+" puntos!");
+// 	break;
+// 	case 7 || 8 || 9:
+// 	puntos=50;
+// 	alert("Salió "+numero+". Tenés "+puntos+" puntos!");
+// 	break;
+// 	case 0:
+// 	alert("Salió 0! Perdiste!");
+// 	break;
+// 	case 10:
+// 	alert("Salió 10! Ganaste!");
+// }
+// _____________________________________________________________
+
+var juego=["piedra", "papel", "tijera"];
+
+var jugador=prompt("Piedra, papel o tijera?").toLowerCase();
+
+var computadora=juego[Math.floor(Math.random()*3)];
+
+if (jugador==computadora){
+	alert("Empate!");
+}
+else if ((jugador=="piedra" && computadora=="tijera") || (jugador=="papel" && computadora=="piedra") || (jugador=="tijera" && computadora=="papel")){
+	alert("Ganaste!");
+}
+else if ((jugador=="piedra" && computadora=="papel") || (jugador=="papel" && computadora=="tijera") || (jugador=="tijera" && computadora=="piedra")){
+	alert("Perdiste!");
+}
+else{
+	alert("Intentalo de vuelta");
+}
+
+</script>
+
+</body>
+</html>

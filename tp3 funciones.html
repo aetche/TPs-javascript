@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	//------------------------------------------------------------
+			// Mejorar nuestra calculadora. Deberá poder ingresar 2 valores y qué operación quiere realizar. Imprimir resultado en la consola.
+
+		function suma(){
+			var resultado = 0;
+			for (var numero in arguments){
+				resultado+=arguments[numero];
+			}
+			return resultado;
+		}
+
+		function resta(){
+			var resultado = arguments[0];
+			for (var i=1; i<arguments.length; i++){
+				resultado-=arguments[i];
+			}
+			return resultado;
+		}
+
+		function multiplicacion(){
+			var resultado = 1;
+			for (var numero in arguments){
+				resultado*=arguments[numero];
+			}
+			return resultado;
+		}
+
+		function division(){
+			var resultado = arguments[0];
+				for (var i=1; i<arguments.length; i++){
+					if (arguments[i]==0){
+						return "No se puede dividir por cero";
+					}
+					else{
+						resultado/=arguments[i];
+				}
+				return resultado;
+				}
+		}
+
+		var valor1=parseInt(prompt("Ingrese el primer valor que quiere calcular"));
+		var valor2=parseInt(prompt("Ingrese el segundo valor que quiere calcular"));
+		var operacion=prompt("Ingrese la operacion que quiere realizar: suma, resta, multiplicacion o division?").toLowerCase();
+		console.log(valor1,valor2);
+
+		switch(operacion){
+			case "suma":
+			alert("Resultado de la suma es: "+suma(valor1,valor2));
+			break;
+			case "resta":
+			alert("Resultado de la resta es: "+resta(valor1,valor2));
+			break;
+			case "multiplicacion":
+			alert("Resultado de la multiplicacion es: "+multiplicacion(valor1,valor2));
+			break;
+			case "division":
+			alert("Resultado de la division es: "+division(valor1,valor2));
+			break;
+
+		}
+
+
+	</script>
+
+</body>
+</html>
