@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TP 4 - Metodos de strings y arrays</title>
+</head>
+<body>
+
+<script type="text/javascript">
+/*	TP4: Alumnos
+Ingresar un listado de nombres de alumnos por pantalla. Cada vez que se ingresa un nuevo usuario, preguntar si se quiere ingresar otro utilizando la función "Confirm". En caso de que el usuario no quiera ingresar otro alumno, mostrar los siguientes resultados por consola:
+-Indicar la cantidad de alumnos que se ingresaron
+-Preguntar si "Maradona" vino a la clase. Hacerlo con otra función que tome un array como parámetro y retorne true o false dependiendo si lo encontró
+-Mostrar el listado de alumnos por pantalla.*/
+
+var ingresar = confirm("Quiere ingresar un alumno?");
+var alumnos = [];
+
+while(ingresar){
+	alumnos.push(prompt("Ingrese el nombre"));
+	ingresar = confirm("Quiere ingresar otro alumno?");
+}
+
+console.log("Nombres de los alumnos: " + alumnos);
+console.log("Cantidad de alumnos: " + alumnos.length);
+
+
+function preguntarSiVino(nombre){
+	for (var i = 0; i < alumnos.length ; i++){
+		if (alumnos[i] == nombre.toLowerCase()){
+			return console.log("Maradona vino a clase");
+		}
+	}
+	return console.log("Maradona faltó");
+}
+
+preguntarSiVino("Maradona");
+
+
+</script>
+
+</body>
+</html>

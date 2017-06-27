@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//TP4: Alumnos
+// Ingresar un listado de nombres de alumnos por pantalla. Cada vez que se ingresa un nuevo usuario, preguntar si se quiere ingresar otro utilizando la función "Confirm". En caso de que el usuario no quiera ingresar otro alumno, mostrar los siguientes resultados por consola:
+// Indicar la cantidad de alumnos que se ingresaron
+// Preguntar si "Maradona" vino a la clase. Hacerlo con otra función que tome un array como parámetro y retorne true o false dependiendo si lo encontró
+// Mostrar el listado de alumnos por pantalla.
+	
+var ingreso = confirm('Quiere ingresar un alumno?');
+var alumnos=[];
+while(ingreso){
+	alumnos.push(prompt('Ingrese el nombre del alumno'));
+	ingreso = confirm('Quiere ingresar otro alumno?');
+}
+
+console.log(alumnos);
+console.log('Fueron ingresados ' + alumnos.length + ' alumnos.');
+
+function preguntarSiVinoAlguien(nombre){
+	for (var i = 0 ; i < alumnos.length ; i++){
+		if (alumnos[i]== nombre.toLowerCase()){
+			return true;
+		}
+	}
+	return false;
+}
+	
+console.log(preguntarSiVinoAlguien('Maradona'));
+
+</script>
+
+</body>
+</html>

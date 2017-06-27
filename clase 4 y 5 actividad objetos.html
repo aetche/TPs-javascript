@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	/*# Hacer un objeto que represente un Auto
+​- Debera tener las propiedades color, modelo, patente, marca, prendido, velocidad y velocidad maxima
+- Debera tener los metodos encender, acelerar, mostrar velocidad actual, frenar y apagar
+- Por lo tanto mediante el metodo acelerar tendra que ir aumentando la propiedad velocidad hasta llegar a la velocidad maxima.
+Hacer un objeto que represente un Auto
+
+Debera tener las propiedades color, modelo, patente, marca, prendido, velocidad y velocidad maxima
+Debera tener los metodos encender, acelerar, mostrar velocidad actual, frenar y apagar
+Por lo tanto mediante el metodo acelerar tendra que ir aumentando la propiedad velocidad hasta llegar a la velocidad maxima.*/
+
+var auto = {
+	color: 'rojo',
+	marca: 'ferrari',
+	modelo: 'f1',
+	patente: 'abc-012',
+	prendido: false,
+	velocidad: 0,
+	velocidadMaxima: 120,
+	
+};
+
+function encenderApagar(booleano){
+	this.prendido=booleano;
+	console.log(this.prendido);
+};
+function acelerar(cuanto){
+	if(this.velocidad+cuanto<=this.velocidadMaxima){
+		this.velocidad=this.velocidad + cuanto;
+		console.log('Velocidad: '+ this.velocidad);
+	}
+	else{
+		console.log('Te van a multar!');
+	}
+};
+function velocidad(){
+	console.log('Velocidad: '+ this.velocidad);
+};
+function frenar(){
+	this.velocidad=0;
+	console.log('Velocidad: '+ this.velocidad);
+};
+
+
+//IIFE: Inmediately invoked function expression
+
+
+</script>
+
+</body>
+</html>
