@@ -25,29 +25,33 @@ var auto = {
 	prendido: false,
 	velocidad: 0,
 	velocidadMaxima: 120,
-	
+	encender: function(){
+		this.prendido=true;
+	},
+
+	apagar: function(){
+		this.prendido=false;
+	},
+
+	acelerar: function(cuanto){
+		if(this.velocidad+cuanto<=this.velocidadMaxima){
+			this.velocidad=this.velocidad + cuanto;
+			console.log('Velocidad: '+ this.velocidad);
+		}
+		else{
+			console.log('Te van a multar!');
+		}
+	},
+	velocidadActual: function(){
+		console.log('Velocidad: '+ this.velocidad);
+	},
+	frenar: function(){
+		this.velocidad=0;
+		console.log('Velocidad: '+ this.velocidad);
+	},
 };
 
-function encenderApagar(booleano){
-	this.prendido=booleano;
-	console.log(this.prendido);
-};
-function acelerar(cuanto){
-	if(this.velocidad+cuanto<=this.velocidadMaxima){
-		this.velocidad=this.velocidad + cuanto;
-		console.log('Velocidad: '+ this.velocidad);
-	}
-	else{
-		console.log('Te van a multar!');
-	}
-};
-function velocidad(){
-	console.log('Velocidad: '+ this.velocidad);
-};
-function frenar(){
-	this.velocidad=0;
-	console.log('Velocidad: '+ this.velocidad);
-};
+
 
 
 //IIFE: Inmediately invoked function expression
