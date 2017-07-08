@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TP5 OBJETOS</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+
+/*	TP5: Objetos (Cuidado que en la plataforma esta como tp4)(Opcional)
+•	Crear un array de películas
+•	Crear una función que agregue objetos “película” al array “películas”: El objeto películadeberá tener ID, titulo, descripción, año, duración, actores, director. Deberá tener métodos para editar todas sus propiedades menos su ID, y para los actores tendrá que ir agregando uno a uno.*/
+
+var peliculas = [
+	{
+		id: 1,
+		titulo: 'shrek',
+		descripción: 'un ogro que se enamora de una princesa',
+		año: 2001, 
+		duración: 92, 
+		actores: ['Mike Myers', 'Cameron Diaz', 'Eddie Murphy','John Lithgow'],
+		director: 'Andrew Adamson',
+	},
+	{
+		id: 2,
+		titulo: 'Toy Story',
+		descripción: 'La historia sigue las aventuras de un grupo de juguetes vivientes, en particular del vaquero Woody y el guardián espacial Buzz Lightyear',
+		año: 1995, 
+		duración: 81, 
+		actores: ['Tom Hanks', 'Tim Allen', 'Don Rickles','Jim Varney'], 
+		director: 'John Lasseter',
+	},
+];
+
+var nuevaPelicula = function(titulo, descripcion,año,duracion,director){
+	var actores = [prompt('Ingrese actor:')];
+	while (confirm('La pelicula tiene mas actores?: ')){
+		actores.push(prompt('Ingrese actor:'));
+		console.log(actores);
+	}
+
+	var pelicula = {
+		id:Math.floor(Math.random()*100),
+		titulo:titulo,
+		descripcion:descripcion,
+		año:año,
+		duracion:duracion,
+		actores:actores,
+		director:director,
+	}
+	peliculas.push(pelicula);
+	console.log(peliculas);
+};
+
+
+
+
+
+</script>
+
+</body>
+</html>

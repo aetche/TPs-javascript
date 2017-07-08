@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CREAR UN MODULO</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		/* 
+
+# Crear el modulo Diario
+
+El objeto noticia debera contener un id, un titulo, una descripcion y una imagen
+El modulo Debera validar que la noticia no fue ingresada previamente
+El modulo Debera tener la posibilidad de eliminar una noticia por ID
+El modulo Debera tener la posibilidad de ordernar sus noticias
+
+
+*/
+
+var diario = (function(){
+
+	//privado
+	var noticias = [
+		{
+			id: 1,
+			titulo: "Noticia Principal",
+			descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+			imagen: "noticia001.jpg"
+		},
+		{
+			id: 2,
+			titulo: "Noticia Secundaria",
+			descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			imagen: "noticia002.jpg"
+		},
+		{
+			id: 3,
+			titulo: "Noticia Alternativa",
+			descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			imagen: "noticia003.jpg"
+		},	
+	];
+
+	//publico
+	return{
+		getNoticias: function(){
+			console.log(noticias);
+		},
+		crearNoticia: function(titulo,descripcion,imagen){
+			var nueva = {
+				titulo:titulo,
+				descripcion:descripcion,
+				imagen:imagen,
+				id:Math.floor((Math.random() * 100) + 1),
+			}
+			for (var i = 0; i < noticias.length ; i++) {
+				if(titulo===noticias[i].titulo){
+					console.log('La noticia ya fue ingresada!');
+					nueva=false;
+				}
+			}
+			if (nueva!=false){
+				noticias.push(nueva);
+				console.log('Se agregó noticia titulada: '+titulo);
+			}
+		},
+
+		eliminarNoticia: function(id){
+			for (var i = 0; i < noticias.length ; i++) {
+				if(id===noticias[i].id){
+					console.log('Se eliminó la noticia: '+ noticias[i].titulo);
+					noticias.splice(i,1);
+				}
+			}
+		},
+		ordernar: function(modo){
+			noticias.sort(function(a,b){
+
+			if (modo === 'titulo') {
+
+				if(a.titulo < b.titulo) {
+					return -1 
+				} else {
+					return 1
+				}
+			} 
+			else if (modo === 'id'){ 
+
+				if(a.id < b.id) {
+					return -1
+				} else {
+					return 1
+				}
+			}
+
+		});
+			console.log(noticias);
+		}
+
+	}
+
+
+
+
+
+
+
+})();
+
+	</script>
+
+
+</body>
+</html>

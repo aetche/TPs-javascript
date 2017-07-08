@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TP7 MODULO DIARIO</title>
+</head>
+<body>
+	<header>	
+		<h1 class="title">Mi diario</h1>
+		<p class="subtitle">Estas son nuestras noticias:</p>
+	</header>
+	<section>
+		
+	</section>
+<script type="text/javascript">
+
+/*•	El objeto noticia debera contener un id, un titulo, una descripcion y una imagen
+•	El moduloDebera validar que la noticia no fue ingresada previamente
+•	El moduloDebera tener la posibilidad de eliminar una noticia por ID
+•	El moduloDebera tener la posibilidad de ordernar sus noticias
+
+•	El módulo Deberá, de forma privada o pública, mostrar/renderizar las noticias en el DOM
+•	El título deberá ser un H1, la descripción un P y la imagen un img
+*/
+
+
+
+var diario = (function(){
+
+	var noticias = [
+	{
+		id: 1,
+		titulo:'El Gobierno designó una directora nacional de movilidad en bicicleta',
+		descripcion:'Según se publicó el Boletín Oficial , el Ministerio de Transporte designó a la arquitecta María Belén Cardasz como Directora Nacional de Movilidad en Bicicleta. Todo una sorpresa. De acuerdo a la norma, se trata de un puesto que depende de la Dirección Nacional de Transporte no Motorizado de la Subsecretaría de Movilidad Urbana de la Secretaría de Planificación de Transporte del ministerio que conduce Guillermo Dietrich.',
+		imagen: 'bici.jpg',
+	},
+		{
+		id: 2,
+		titulo:'Ya funciona en Córdoba She Taxi, la aplicación para pedir autos conducidos sólo por mujeres',
+		descripcion:'La aplicación que sirve para pedir automóviles conducidos por mujeres ya funciona en la ciudad de Córdoba. Hasta el momento se registran 25 conductoras que pueden ser contactadas por pasajeros a través de la app que tuvo su origen en la santafesina ciudad de Rosario. Con más de 500 descagas desde el App Store y Google Play, Pamela Pastor, integrante de la agrupación de mujeres taxistas Afetac y una de las impulsoras del desembarco de She Taxi en Córdoba, habló con el medio local La Voz y dijo: "Somos 25 y por ahí no damos abasto, pero yo creo que con el paso de los días se van a anotar más chicas".',
+		imagen:'taxi.jpg',
+	},	
+	{
+		id: 3,
+		titulo:'Alergias a los medicamentos: qué son y cómo tratarlas',
+		descripcion:'Fiebre, urticaria, picazón en los ojos y dificultad para respirar son sólo algunos de los síntomas que pueden aparecer luego de consumir un medicamento al que una persona es alérgica y no lo sabe. Según estimaciones difundidas por el servicio de Alergia e Inmunología del Hospital Universitario Austral, hasta un 25% de la población puede presentar una reacción ante algún fármaco y las alergias están entre las principales complicaciones. Éstas afectan al 7% de la población general, y ascienden a entre el 10% y 20% cuando se trata de pacientes hospitalizados.',
+		imagen:'salud.jpg',
+	},
+];
+
+	return{
+		getNoticias: function(){
+			console.log(noticias);
+		},
+		crearNoticia: function(titulo,descripcion,imagen){
+			var nueva = {
+				id: Math.floor (Math.random() * 100),
+				titulo:titulo,
+				descripcion:descripcion,
+				imagen:imagen,
+			}
+
+			for (var i = 0; i < noticias.length; i++) {
+				if(titulo === noticias[i].titulo){
+					return console.log('La noticia ya fue ingresada');
+				}
+			}
+			noticias.push(nueva);
+			console.log(noticias);
+		},
+		eliminarNoticia: function(id){
+			for (var i = 0 ; i < noticias.length ; i++){
+				if(id === noticias[i].id){
+					noticias.splice(i,1);
+				}
+			}
+		},
+		ordernar:function(modo){
+				noticias.sort(function(a,b){
+					if(modo==='titulo'){
+						if (a.titulo < b.titulo){
+							return -1;
+						}
+						else {
+							return 1;
+						}
+					}
+					else if(modo==='id'){
+						if (a.id < b.id){
+							return -1;
+						}
+						else {
+							return 1;
+						}
+					}
+				});
+		},
+		render: function(){
+			var contenedor = document.querySelector('section');
+			
+			for (var i = 0 ; i < noticias.length ; i++){
+				var titulo = document.createElement('h2');
+				titulo.innerHTML = noticias[i].titulo;
+				contenedor.appendChild(titulo);
+
+				var descripcion = document.createElement('p');
+				descripcion.innerHTML = noticias[i].descripcion;
+				contenedor.appendChild(descripcion);
+
+				var imagen = document.createElement('img');
+				imagen.src = 'imagenes/' + noticias[i].imagen;
+				contenedor.appendChild(imagen);
+
+			}
+
+			
+
+		}
+
+	}
+})();
+
+
+diario.render();
+</script>
+
+</body>
+</html>
