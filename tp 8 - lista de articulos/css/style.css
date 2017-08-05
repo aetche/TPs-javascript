@@ -1,0 +1,19 @@
+body {
+	margin:30px;
+}
+p{
+	font-weight: bold;
+}
+
+form{
+	margin-top: 40px;
+}
+
+.alert{
+	padding: 7px;
+	margin:10px;
+}
+
+.pepe{
+	color: red;
+}

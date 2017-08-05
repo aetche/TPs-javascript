@@ -1,0 +1,11 @@
+body{
+	margin: 10px;
+}
+
+.imprimir-ingresar, #cv-generado{
+	display: none;
+}
+
+form{
+	color:blue;
+}

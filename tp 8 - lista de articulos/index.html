@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de articulos</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<p>Crear un formulario con 3 campos:
+Título del Artículo. 
+Texto del Artículo
+importancia (será un select box con los valores: “normal”, “novedad” y “urgente” )
+
+A partir de un botón que diga “agregar” ir agregando las noticias en un contenedor en la página.  Dependiendo del valor que tenga el select “importancia”, se cambiaran los estilos de cada noticia. Para eso, deberán generarse previamente clases de CSS para cada uno de los valores obtenidos del select.
+</p>
+
+<form>
+	<div class="form-group">
+	<label for="titulo">Título del artículo</label>
+	<input type="text" class="form-control" placeholder="Escriba el título del artículo" id="titulo">
+	</div>
+	<div class="form-group">
+		<label for="texto">Escriba aquí el texto del artículo</label>
+		<textarea class="form-control" placeholder="Texto del artículo" rows="3" id="texto"></textarea>
+	</div>
+
+
+	<p>Seleccione la importancia del artículo</p>
+	<select multiple class="form-control">
+	  <option class="radio alert alert-info">Normal</option>
+	  <option class="radio alert alert-success">Novedad</option>
+	  <option class="radio alert alert-danger">Urgente</option>
+	</select>
+
+	<button type="submit" class="btn btn-default">Agregar</button>
+</form>
+
+<div>
+	<h3>Noticias ingresadas</h3>
+	<ul class="contenedordenoticias">
+	</ul>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" 
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="
+sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
